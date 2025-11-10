@@ -29,7 +29,26 @@ python owasp/main.py
 
 Run the tests to verify security measures:
 ```bash
-pytest owasp/tests/
+ # Test vulnerable version
+rm -f demo.db
+python -m pytest owasp/tests/main_test.py -v
+```
+
+## 🧪 Testing & Solution
+
+### Testing Your Fixes
+- **Expected initially**: All 5 tests FAIL (vulnerabilities detected)
+- **After fixing**: All 5 tests PASS (vulnerabilities resolved)
+
+### Files Overview
+- `main.py` - Vulnerable application (fix the security issues here)
+- `main_solution.py` - Reference implementation with all fixes
+- `tests/main_test.py` - Security test suite
+- `test_solution.py` - Script to test the solution
+
+### Test the Solution
+```bash
+python owasp/test_solution.py
 ```
 
 ---
